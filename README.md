@@ -41,7 +41,7 @@ All Python files were documented to explain processing algorithm of this MusicBr
 1. Make sure docker and docker-compose are installed.
 2. Enter shell and clone this repo into desired folder, cd into folder.
 3. run docker-compose up --build, once the containers are up you should be able to connect to the application using http://0.0.0.0:8080 or localhost:8080 (on Windows)
-4. docker exec -it fast-api "/bin/bash" to enter into new container, run pytest to run the tests.
+4. Tests don't run by default. To run them you need to enter the api container and run pytest from within the application folder.
 5. Explore database by docker exec -it mb_db "/bin/bash" to enter container running PostgreSQL server, and run 'psql' to start interacting with the database.
 
 There is also an online version running on GCP: http://34.172.97.135:8080/. But it requires some more work to get Monitoring features up.
