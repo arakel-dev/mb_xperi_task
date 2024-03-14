@@ -2,7 +2,7 @@ This is my solution to the Xperi Take-Home task.
 
 ### Notes and explanation on the logic of the app:
 
-1. User initiates the request to **/search** endpoint with `?title="query"` parameter, the endpoint initiates main function from search.py module to find the best match to user's request.
+1. User initiates the request to **/search** endpoint with `?title=query` parameter, the endpoint initiates main function from search.py module to find the best match to user's request.
 2. Successful finds get saved into *tracks* table, and may be returned as a response to future queries, in order to omit duplicates and lower the number of API calls to external system.
 3. If the user sends a query previously unknown to the database - this is when MusicBrainz API gets called with `strict=True`, `limit=100` parameter. If no result met the search criteria within first 100 results, go to next 100 (if there are) and repeat until `total_limit` is reached (default=500).
 4. In order to be delivered to user as a result to his query, a recording needs to meet the following criteria:
